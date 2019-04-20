@@ -20,10 +20,10 @@ export const getSmurfs = () => dispatch => {
 };
 
 
-export const getSmurf = () => dispatch => {
+export const postSmurfs = (smurf) => dispatch => {
     dispatch({ type: FETCH_SMURF});
     axios
-        .post('http://localhost:3333/smurfs')
+        .post('http://localhost:3333/smurfs', smurf)
         .then(response =>
             dispatch({ type: FETCH_SMURF_SUCCESS, payload: response.data })
         )
