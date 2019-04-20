@@ -12,11 +12,11 @@ export const FETCH_SMURF_FAILURE = 'FETCH_SMURF_FAILURE'
 export const getSmurfs = () => dispatch => {
     dispatch({ type: FETCH_SMURF });
     axios
-        .get('http://localhost:3333/smurfs')
-        .then(response =>  {
-            dispatch({ type: FETCH_SMURF_SUCCESS, payload: response.data})
+        .get(`http://localhost:3333/smurfs`)
+        .then(response =>
+            dispatch({ type: FETCH_SMURF_SUCCESS, payload: response.data })
         )
-        .catch(error => dispatch({type: FETCH_SMURF_FAILURE. payload: error }));
+        .catch(error => dispatch({ type: FETCH_SMURF_FAILURE, payload: error }));
 };
 
 
